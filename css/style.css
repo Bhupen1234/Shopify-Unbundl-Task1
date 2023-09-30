@@ -1,0 +1,151 @@
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+*{
+ margin: 0;
+ font-family: 'Pacifico', cursive !important;
+}
+
+html,body{
+  height: 100%;
+}
+body{
+  font-family: 'Pacifico', cursive !important;
+  line-height: 1.5;
+ 
+
+  overflow-x: hidden;
+  background-color: black; 
+  color: #fff;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+
+img,svg{
+  display: block;
+  max-width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 12px; 
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; 
+}
+
+
+.card{
+    color: black;
+}
+
+.card{
+    width: 100%;
+}
+
+#chocolates-wrapper{
+  position: sticky;
+  top: 5vh;
+  height: 100vh;
+
+  overflow-y: auto
+}
+
+
+.chip {
+  display: inline-block;
+  background-color: #0d6efd;
+  border-radius: 16px;
+  padding: 4px 12px;
+  margin: 4px;
+  font-size: 14px;
+  padding-right: 30px;
+  position: relative;
+}
+
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px 8px;
+  background-color: 
+  #0d6efd;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.close-button::before {
+  content: "×";
+}
+
+.close-button:hover {
+  background-color: #0748a2;
+}
+
+#selected-chocolates-pills{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+#pack-calculation-container{
+  margin-top: 22px;
+  background-color: white;
+  text-align: center;
+  border-radius: 30px;
+  color: black;
+}
+
+
+.button-incdnc{
+  margin: auto;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+}
+
+
+.line{
+  display: none;
+}
+
+#header{
+  background-color: #fff;
+  color: black;
+  text-align: center;
+}
+
+@media only screen and (max-width: 767px){
+  #chocolates-wrapper{
+    height: 65vh;
+    
+  }
+
+  #custom-chocolates-section{
+    margin-top: 22px;
+  }
+
+
+  .line{
+    display: block;
+  }
+
+
+}

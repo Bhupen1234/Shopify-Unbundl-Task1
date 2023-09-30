@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "name": "Milk  ",
+        "price": 20
+    },
+    {
+        "id": 2,
+        "name": "Dark  ",
+        "price": 18
+    },
+    {
+        "id": 3,
+        "name": "White  ",
+        "price": 22
+    },
+    {
+        "id": 4,
+        "name": "Caramel  ",
+        "price": 25
+    },
+    {
+        "id": 5,
+        "name": "Hazelnut  ",
+        "price": 24
+    },
+    {
+        "id": 6,
+        "name": "Almond  ",
+        "price": 23
+    },
+    {
+        "id": 7,
+        "name": "Mint  ",
+        "price": 21
+    },
+    {
+        "id": 8,
+        "name": "Coconut  ",
+        "price": 26
+    },
+    {
+        "id": 9,
+        "name": "Raspberry  ",
+        "price": 27
+    },
+    {
+        "id": 10,
+        "name": "Peanut Butter",
+        "price": 28
+    },
+    {
+        "id": 11,
+        "name": "Cherry  ",
+        "price": 24
+    },
+    {
+        "id": 12,
+        "name": "Toffee  ",
+        "price": 25
+    },
+    {
+        "id": 13,
+        "name": "Orange  ",
+        "price": 22
+    },
+    {
+        "id": 14,
+        "name": "Mango  ",
+        "price": 23
+    },
+    {
+        "id": 15,
+        "name": "Strawberry  ",
+        "price": 26
+    },
+    {
+        "id": 16,
+        "name": "Rum  ",
+        "price": 30
+    },
+    {
+        "id": 17,
+        "name": "Chili  ",
+        "price": 29
+    },
+    {
+        "id": 18,
+        "name": "Coffee  ",
+        "price": 27
+    },
+    {
+        "id": 19,
+        "name": "Lavender  ",
+        "price": 24
+    },
+    {
+        "id": 20,
+        "name": "Cinnamon  ",
+        "price": 22
+    }
+]
