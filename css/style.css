@@ -132,6 +132,14 @@ img,svg{
   text-align: center;
 }
 
+.swal-button{
+  background-color: #0d6efd;
+}
+
+.swal-button:hover{
+  background-color: #0748a2 !important;
+}
+
 @media only screen and (max-width: 767px){
   #chocolates-wrapper{
     height: 65vh;

@@ -65,6 +65,15 @@
                 </div>
                 <hr />
                 <h4 id="total-price">Total Price:  ₹ 0</h4>
+
+                <button
+                    class="btn btn-primary"
+                    type="button"
+                    style="width: 30%; margin-bottom: 5px;"
+                    onclick="orderNow()"
+                  >
+                    Order Now
+                  </button>
               </div>
             </div>
           </div>
@@ -79,8 +88,12 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- Sweet Alert Script -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+     <!-- Local Script -->
     <script type="module">
-      import { init ,increasePackQuantity,decreasePackQuantity} from "./index.js";
+      import { init ,increasePackQuantity,decreasePackQuantity,orderNow} from "./index.js";
 
       const packQuantity = 1;
 
@@ -90,6 +103,7 @@
       })();
       window.increasePackQuantity=increasePackQuantity;
       window.decreasePackQuantity=decreasePackQuantity;
+      window.orderNow=orderNow;
     </script>
   </body>
 </html>

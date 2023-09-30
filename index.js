@@ -4,6 +4,7 @@ const maxChocolates = 8;
 let selectedChocolates = [];
 let packQuantity = 1;
 let totatPricePack = 0;
+let totalPrice = 0;
 
 function init() {
   addChocolates();
@@ -16,25 +17,23 @@ function addChocolates() {
 }
 
 //Select the chocolate on response to select button
-function selectChocolate(index,Button) {
+function selectChocolate(index, Button) {
   if (selectedChocolates.length < maxChocolates) {
     selectedChocolates.push(data[index]);
     addSelectedChocolates(selectedChocolates);
-    Button.textContent="Remove"
+    Button.textContent = "Remove";
     updateTotalPriceOfPack();
     if (selectedChocolates.length === maxChocolates) {
       updateTotalPrice();
     }
     console.log(selectedChocolates);
   } else {
-    alert("You can add only 8 Chocolates per pack");
-    
+    swal(`You can add only ${maxChocolates} Chocolates per pack`);
   }
 }
 
 //Remove the chocolate on response to remove button
 function removeChocolate(id) {
-
   selectedChocolates = selectedChocolates.filter((ele) => ele.id !== id);
 
   addSelectedChocolates(selectedChocolates);
@@ -74,12 +73,10 @@ function addChocolatesToDOM(chocolate, index) {
 
   Button.addEventListener("click", () => {
     if (!selectedChocolates.includes(chocolate)) {
-      selectChocolate(index,Button);
-      
+      selectChocolate(index, Button);
     } else {
-        Button.textContent="Select"
+      Button.textContent = "Select";
       removeChocolate(chocolate.id);
-    
     }
   });
 
@@ -117,7 +114,7 @@ function addSelectedChocolates(selectedChocolates) {
 
 //Update the total price of pack
 function updateTotalPriceOfPack() {
-   totatPricePack=0
+  totatPricePack = 0;
   selectedChocolates.forEach((chocolate) => {
     totatPricePack += chocolate.price;
   });
@@ -134,7 +131,7 @@ function increasePackQuantity() {
     document.getElementById("pack-qty").textContent = packQuantity;
     updateTotalPrice();
   } else {
-    alert("Please select 8 Chocolates");
+    swal(`Please select ${maxChocolates} Chocolates to increase the Quantity `);
   }
 }
 
@@ -152,7 +149,7 @@ function decreasePackQuantity() {
 
 //update the total price
 function updateTotalPrice() {
-  let totalPrice = 0;
+  totalPrice = 0;
 
   totalPrice = packQuantity * totatPricePack;
   if (selectedChocolates.length < maxChocolates) {
@@ -164,4 +161,28 @@ function updateTotalPrice() {
   ).textContent = `Total Price: ₹ ${totalPrice}`;
 }
 
-export { init, increasePackQuantity, decreasePackQuantity };
+//Check out the order
+function orderNow() {
+  if (selectedChocolates.length === maxChocolates) {
+    // swal("Order Placed", "Thanks for your order!", "success");
+    swal({
+      title: "Please Confirm",
+      text: `Your order of ₹  ${totalPrice}`,
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((Confirmed) => {
+      if (Confirmed) {
+        swal("Thanks for your order", {
+          icon: "success",
+        }).then(() => window.location.reload());
+      } else {
+        swal("Your Order is cancelled");
+      }
+    });
+  } else {
+    swal("Please select 8 chocolates per pack to Order");
+  }
+}
+
+export { init, increasePackQuantity, decreasePackQuantity, orderNow };
