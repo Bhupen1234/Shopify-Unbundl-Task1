@@ -166,9 +166,9 @@ function orderNow() {
   if (selectedChocolates.length === maxChocolates) {
     // swal("Order Placed", "Thanks for your order!", "success");
     swal({
-      title: "Please Confirm",
+      title: "Please Confirm Your Order",
       text: `Your order of ₹  ${totalPrice}`,
-      icon: "warning",
+      icon: "info",
       buttons: true,
       dangerMode: true,
     }).then((Confirmed) => {
